@@ -1,0 +1,12 @@
+{
+  "_note": "Selector strings for the Autocomplete form. Playwright's page.locator() accepts CSS (used here) or XPath (prefix with 'xpath=' or start with '//') interchangeably.",
+  "autocomplete_form": {
+    "title": "h1.form-title",
+    "input": "#input-field",
+    "suggestion_list": "ul.suggestions",
+    "suggestion_items": "ul.suggestions > li",
+    "next_button": "#next-button",
+    "error_message": "span.error-message",
+    "success_container": "div.success-container"
+  }
+}

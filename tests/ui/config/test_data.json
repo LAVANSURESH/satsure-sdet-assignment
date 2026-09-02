@@ -1,0 +1,54 @@
+{
+  "suggestions": [
+    "agile methodology",
+    "agile methodology process",
+    "agile methodology process testing"
+  ],
+  "messages": {
+    "success": "Success! Your response has been recorded.",
+    "error": "Please select a valid suggestion."
+  },
+  "tab_order": [
+    "agile methodology",
+    "agile methodology process",
+    "agile methodology process testing",
+    "next-button"
+  ],
+  "filtering": {
+    "prefix": [
+      {
+        "input": "agile methodology p",
+        "visible": ["agile methodology process", "agile methodology process testing"]
+      },
+      {
+        "input": "agile methodology process testing",
+        "visible": ["agile methodology process testing"]
+      },
+      { "input": "methodology", "visible": [] }
+    ],
+    "anywhere": [
+      {
+        "input": "methodology",
+        "visible": [
+          "agile methodology",
+          "agile methodology process",
+          "agile methodology process testing"
+        ]
+      },
+      {
+        "input": "agile method",
+        "visible": [
+          "agile methodology",
+          "agile methodology process",
+          "agile methodology process testing"
+        ]
+      },
+      { "input": "process testing", "visible": ["agile methodology process testing"] }
+    ]
+  },
+  "inputs": {
+    "trigger": "agile",
+    "free_text": "some free text response",
+    "no_match_free_text": "random text xyz"
+  }
+}

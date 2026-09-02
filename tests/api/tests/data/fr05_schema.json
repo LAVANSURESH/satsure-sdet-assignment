@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "account_id",
+    "account_email",
+    "start_date",
+    "end_date",
+    "locale",
+    "text",
+    "suggestion_list",
+    "completed"
+  ],
+  "properties": {
+    "account_id": { "type": ["string", "integer"] },
+    "account_email": {
+      "type": "string",
+      "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    "start_date": { "type": "string", "minLength": 1 },
+    "end_date": { "type": "string", "minLength": 1 },
+    "locale": { "type": "string", "minLength": 2 },
+    "text": { "type": "string" },
+    "suggestion_list": { "type": "string" },
+    "completed": { "type": "boolean" }
+  }
+}

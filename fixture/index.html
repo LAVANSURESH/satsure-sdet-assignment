@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autocomplete Form</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!--
+    Structure mirrors the HTML given in the assignment. The extra <h1> is the
+    "title" the requirements describe; ids/classes are kept verbatim so that
+    spec-derived selectors work unchanged.
+  -->
+  <div class="form-container">
+    <h1 class="form-title">Autocomplete Form</h1>
+    <label for="input-field">Enter a value:</label>
+    <input type="text" id="input-field" placeholder="Type here..." autocomplete="off">
+    <ul class="suggestions">
+      <li tabindex="0">agile methodology</li>
+      <li tabindex="0">agile methodology process</li>
+      <li tabindex="0">agile methodology process testing</li>
+    </ul>
+    <button id="next-button">Next</button>
+    <span class="error-message" hidden>Error: Invalid input. Please select a valid suggestion.</span>
+    <div class="success-container" hidden>
+      <p>Success! Your response has been recorded.</p>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

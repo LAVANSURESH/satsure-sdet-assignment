@@ -1,0 +1,80 @@
+{
+  "session_user": {
+    "account_id": "98765",
+    "account_email": "test123@gmail.com"
+  },
+  "suggestions": [
+    "agile methodology",
+    "agile methodology process",
+    "agile methodology process testing"
+  ],
+  "default_locale": "en-IN",
+  "schema_inputs": [
+    "agile methodology",
+    "agile methodology process testing",
+    "some free text response"
+  ],
+  "suggestion_list": {
+    "prefix": [
+      {
+        "text": "agile methodology process testing",
+        "expected": ["agile methodology process testing"]
+      },
+      {
+        "text": "agile methodology p",
+        "expected": ["agile methodology process", "agile methodology process testing"]
+      },
+      {
+        "text": "agile methodology",
+        "expected": [
+          "agile methodology",
+          "agile methodology process",
+          "agile methodology process testing"
+        ]
+      },
+      {
+        "text": "agile",
+        "expected": [
+          "agile methodology",
+          "agile methodology process",
+          "agile methodology process testing"
+        ]
+      }
+    ],
+    "anywhere": [
+      {
+        "text": "process",
+        "expected": ["agile methodology process", "agile methodology process testing"]
+      }
+    ]
+  },
+  "locale_cases": [
+    { "tag": "en-IN", "well_formed": true },
+    { "tag": "en", "well_formed": true },
+    { "tag": "hi-IN", "well_formed": true },
+    { "tag": "en-Latn-IN", "well_formed": true },
+    { "tag": "en-GB", "well_formed": true },
+    { "tag": "english", "well_formed": false },
+    { "tag": "en_IN", "well_formed": false },
+    { "tag": "e", "well_formed": false },
+    { "tag": "", "well_formed": false },
+    { "tag": "123", "well_formed": false }
+  ],
+  "timestamps": {
+    "explicit_ist": {
+      "start": "2024-03-15T16:00:00+05:30",
+      "end": "2024-03-15T16:00:05+05:30"
+    },
+    "naive": {
+      "start": "2024-03-15T10:30:00",
+      "end": "2024-03-15T10:32:00"
+    }
+  },
+  "negative": {
+    "schema_breaking_injects": ["missing_field", "string_completed"],
+    "reject_inputs": {
+      "empty_text": "",
+      "free_text_when_selection_required": "random text xyz"
+    }
+  }
+}
