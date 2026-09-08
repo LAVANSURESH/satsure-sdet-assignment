@@ -91,26 +91,3 @@ To point the same suites at a deployed system: set `UI_BASE_URL`, skip the
 - **Test data:** move to builders/factories as the input space grows; never depend on
   execution order.
 
-## 8.8 Trade-offs taken for a 48-hour exercise
-
-- **Local fixture instead of the real system** — unblocks executable tests but encodes
-  my reading of the ambiguous requirements (`docs/1`). Expected values in
-  `test_suggestion_list.py` and the locale/timestamp assertions may need revising
-  against the real backend.
-- **Flask development server, not a production WSGI stack** — fine for tests, not
-  representative of production latency or error modes.
-- **Chromium-only by default** — matches the stated environment (Chrome / Windows 10);
-  cross-browser is one flag away but unproven here.
-- **No auth layer** — login is out of scope, so `account_id` / `account_email` are
-  server-fixed. A-09 (client-submitted identity is a security risk) is noted but untested.
-- **Single locale / timezone** — `en-IN` and IST are hard-expected; a real matrix would
-  parametrize both.
-
-## 8.9 If this were production
-
-- Contract tests owned by the provider's pipeline, with the schema published as a
-  versioned artefact.
-- `data-testid` attributes added to the app so selectors are decoupled from copy.
-- Trace-on-failure surfaced in the CI run summary, plus a flake-rate dashboard.
-- Accessibility and performance gates running alongside the functional suite.
-- Configuration and secrets from the CI secret store rather than env-var defaults.
